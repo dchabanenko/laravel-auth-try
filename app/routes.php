@@ -12,3 +12,13 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@showHome']);
+
+Route::get('register', 'HomeController@showRegister');
+Route::post('register', 'UserController@storeRegister')->before('csrf');
+
+Route::resource('sessions', 'SessionsController', ['only' => ['index', 'create', 'destroy', 'store']]);
+
+Route::get('login', 'HomeController@showLogin');
+Route::post('login', 'SessionsController@store')->before('csrf');
+
+Route::get('logout', 'SessionsController@destroy');
