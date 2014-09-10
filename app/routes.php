@@ -24,3 +24,14 @@ Route::post('register', 'UserController@storeRegister')->before('csrf');
 Route::get('logout', 'SessionsController@destroy');
 
 Route::resource('sessions', 'SessionsController', ['only' => ['index', 'create', 'destroy', 'store']]);
+
+Route::any('feeds/create/new', ['as' => 'feeds.create', 'uses' => 'FeedController@create']);
+
+Route::get('feeds/{filter}', ['as' => 'feeds.index', 'uses' => 'FeedController@index']);
+
+Route::get('feeds/{id}/delete', ['as' => 'feeds.delete', 'uses' => 'FeedController@delete']);
+
+Route::any('feeds/{id}/edit', ['as' => 'feeds.edit', 'uses' => 'FeedController@edit']);
+
+
+
