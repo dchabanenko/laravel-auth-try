@@ -19,7 +19,7 @@
 		    </tr>
 		    <tr>
 		        <td>description</td>
-		        <td>{{ Form::text('description', $feed->description, array('placeholder' => 'Description', 'class' => 'form-control')) }}</td>
+		        <td>{{ Form::textarea('description', $feed->description, array('placeholder' => 'Description', 'class' => 'form-control')) }}</td>
 		    </tr>
 		    <tr>
 		        <td>link</td>
