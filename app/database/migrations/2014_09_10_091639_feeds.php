@@ -15,7 +15,7 @@ class Feeds extends Migration {
         Schema::create('feeds', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('description');
+            $table->string('description', 300);
             $table->string('url');
             $table->integer('creator');
             $table->timestamps();
