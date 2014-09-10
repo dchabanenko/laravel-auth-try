@@ -57,7 +57,7 @@ class SessionsController extends \BaseController {
 			$user->password = $password;
 			$user->save();
 
-			return Redirect::to('login');
+			return Redirect::to('login')->withInput()->with(array('message' => 'The user has been registered. Please log in.', 'alert-class'=>'alert-warning'));
 		} else {
 
 			return Redirect::to('register')->withInput()->withErrors();

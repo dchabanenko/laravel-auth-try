@@ -6,7 +6,7 @@
 	<div class="span4 offset1">
 		<div class="well">
 			<legend>Register</legend>
-			{{ Form::open(array('route' => 'sessions.store')) }}
+			{{ Form::open(array('route' => 'sessions.register')) }}
 
 			@if($errors->any())
 			<div class="alert alert-error">

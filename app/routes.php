@@ -13,12 +13,14 @@
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@showHome']);
 
+Route::get('user/{id}/profile', array('before' => 'auth', 'uses' => 'HomeController@showProfile'));
+
+Route::get('login', 'HomeController@showLogin');
+Route::post('login', array('as' => 'sessions.register', 'uses' =>'SessionsController@postRegister'))->before('csrf');
+
 Route::get('register', 'HomeController@showRegister');
 Route::post('register', 'UserController@storeRegister')->before('csrf');
 
-Route::resource('sessions', 'SessionsController', ['only' => ['index', 'create', 'destroy', 'store']]);
-
-Route::get('login', 'HomeController@showLogin');
-Route::post('login', 'SessionsController@store')->before('csrf');
-
 Route::get('logout', 'SessionsController@destroy');
+
+Route::resource('sessions', 'SessionsController', ['only' => ['index', 'create', 'destroy', 'store']]);
