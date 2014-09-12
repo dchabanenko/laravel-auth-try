@@ -28,7 +28,7 @@
 		        <td>{{ $feed->name }}</td>
 		        <td>{{ $feed->description }}</td>
 		        <td><a target=_blank href="{{ $feed->url }}">{{ $feed->url }}</a></td>
-		        <td><a href="#">refresh</a></td>
+		        <td><a href="{{ URL::route('feeds.refresh', $feed->id); }}">refresh</a></td>
 		        <td>
    		            @if (Auth::check() && ($feed->creator == Auth::user()->id))
        		            <a href="{{ URL::route('feeds.edit', $feed->id); }}">edit</a>

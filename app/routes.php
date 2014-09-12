@@ -33,5 +33,5 @@ Route::get('feeds/{id}/delete', ['as' => 'feeds.delete', 'uses' => 'FeedControll
 
 Route::any('feeds/{id}/edit', ['as' => 'feeds.edit', 'uses' => 'FeedController@edit']);
 
-
+Route::get('feeds/{id}/refresh', ['as' => 'feeds.refresh', 'uses' => 'FeedController@refresh']);
 

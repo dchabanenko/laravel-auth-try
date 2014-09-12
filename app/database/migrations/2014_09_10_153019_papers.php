@@ -41,6 +41,7 @@ class Papers extends Migration {
             $table->integer('volume'); //The volume of a journal or multi-volume book
             $table->integer('year'); //The year of publication (or, if unpublished, the year of creation)
             $table->integer('source'); // feed link, from which this record was imported
+            $table->string('hash');
             $table->timestamps();
         });
 	}
