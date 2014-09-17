@@ -111,4 +111,18 @@ class FeedController extends \BaseController {
         }
     }
 
+    /**
+     * delete own feed
+     * @param int $id
+     *
+     * @return Response
+     */
+    public function refresh($id)
+    {
+        Paper::parseNewRecords($id);
+
+        return "ok";
+
+    }
+
 }
