@@ -35,3 +35,5 @@ Route::any('feeds/{id}/edit', ['as' => 'feeds.edit', 'uses' => 'FeedController@e
 
 Route::get('feeds/{id}/refresh', ['as' => 'feeds.refresh', 'uses' => 'FeedController@refresh']);
 
+Route::get('papers/{filter}', ['as' => 'papers.index', 'uses' => 'PaperController@index']);
+Route::get('papers/{id}/like', ['as' => 'papers.like', 'uses' => 'PaperController@like']);

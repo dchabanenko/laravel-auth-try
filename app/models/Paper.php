@@ -51,4 +51,9 @@ class Paper extends Eloquent  {
         }
     }
 
+    public function rssSource()
+    {
+        return $this->belongsTo('RssSource', 'source');
+    }
+
 }

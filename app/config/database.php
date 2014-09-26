@@ -66,9 +66,9 @@ return array(
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'forge',
-			'username' => 'forge',
-			'password' => '',
+			'database' => 'petflowtierzwei',
+			'username' => 'dmitrychabanenko',
+			'password' => '111',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',

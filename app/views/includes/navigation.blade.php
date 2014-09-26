@@ -14,6 +14,7 @@
     @if (Auth::check())
       <li class="{{ (Route::current()->getPath() == 'user/{id}/profile') ? 'active' : '' }}"><a href="{{ URL::to('user/' . Auth::user()->id . '/profile') }}">Profile</a></li>
       <li class="{{ (Route::current()->getPath() == URL::route('feeds.index', 'all')) ? 'active' : '' }}"><a href="{{ URL::route('feeds.index', 'all') }}">Sources</a></li>
+      <li class="{{ (Route::current()->getPath() == URL::route('papers.index', 'all')) ? 'active' : '' }}"><a href="{{ URL::route('papers.index', 'all') }}">Papers</a></li>
     @else
       <li class="{{ Request::is( 'register') ? 'active' : '' }}"><a href="{{ URL::to('register') }}">Register</a></li>
     @endif
